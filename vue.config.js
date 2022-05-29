@@ -9,5 +9,7 @@ module.exports = defineConfig({
             filename: 'index.html',
         }
     },
-    transpileDependencies: true
+    transpileDependencies: [
+      'vuetify'
+    ]
 })
