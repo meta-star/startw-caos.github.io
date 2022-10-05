@@ -1,17 +1,11 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">caOS</div>
-    </v-app-bar>
-
-    <v-main>
-      <router-view />
-    </v-main>
-  </v-app>
+  <div>
+    <router-view/>
+  </div>
 </template>
 
 <script>
 export default {
-  name: "App",
-};
+  name: 'App'
+}
 </script>

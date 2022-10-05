@@ -1,23 +1,29 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
     path: '/',
-    name: 'IndexView',
-    component: () => import('@/views/IndexView.vue')
+    component: () => import('@/layouts/DefaultLayout/Index.vue'),
+    children: [
+      {
+        path: '/',
+        name: 'home',
+        component: () => import('@/views/HomeView.vue'),
+      },
+    ]
   },
   {
-    path: '/about',
-    name: 'AboutView',
-    component: () => import('@/views/AboutView.vue')
-  }
-]
+    path: '*',
+    name: 'not-found',
+    component: () => import('@/views/NotFoundView.vue'),
+  },
+];
 
 const router = new VueRouter({
   routes
-})
+});
 
-export default router
+export default router;
