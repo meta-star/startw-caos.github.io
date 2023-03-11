@@ -9,5 +9,6 @@ module.exports = defineConfig({
             filename: 'index.html',
         }
     },
+    publicPath: process.env.NODE_ENV === 'production' ? '/caos/' : '/',
     transpileDependencies: true
 })
